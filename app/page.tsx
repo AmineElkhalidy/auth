@@ -21,7 +21,11 @@ export default function Home() {
           🔐 Auth
         </h1>
 
-        <p className="text-white text-lg">A simple authentication service.</p>
+        <p className="text-white text-lg">
+          A simple authentication service built using{" "}
+          <span className="font-semibold">Next.js</span> &{" "}
+          <span className="font-semibold">NextAuth</span>.
+        </p>
 
         <div>
           <LoginButton>

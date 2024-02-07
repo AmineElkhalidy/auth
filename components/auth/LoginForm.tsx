@@ -16,6 +16,8 @@ import {
 } from "../ui/form";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
+import FormError from "../FormError";
+import FormSuccess from "../FormSuccess";
 
 const LoginForm = () => {
   const form = useForm<z.infer<typeof LoginSchema>>({
@@ -25,6 +27,8 @@ const LoginForm = () => {
       password: "",
     },
   });
+
+  const onSubmitHandler = (values: z.infer<typeof LoginSchema>) => {};
   return (
     <CardWrapper
       headerLabel="Welcome back"
@@ -33,7 +37,10 @@ const LoginForm = () => {
       showSocial
     >
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(() => {})} className="space-y-6">
+        <form
+          onSubmit={form.handleSubmit(onSubmitHandler)}
+          className="space-y-6"
+        >
           <div className="space-y-4">
             <FormField
               control={form.control}
@@ -69,6 +76,9 @@ const LoginForm = () => {
               )}
             />
           </div>
+
+          <FormError message="" />
+          <FormSuccess message="" />
 
           <Button type="submit" className="w-full">
             Sign in
