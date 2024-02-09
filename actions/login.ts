@@ -30,6 +30,10 @@ export const login = async (values: z.infer<typeof LoginSchema>) => {
           return {
             error: "Invalid credentials!",
           };
+        case "EmailSignInError":
+          return {
+            error: "Your email is not verified!",
+          };
         default:
           return {
             error: "Something went wrong!",
