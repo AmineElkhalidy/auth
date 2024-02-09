@@ -10,18 +10,18 @@ const font = Poppins({
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-sky-400 to-blue-800">
+    <main className="flex min-h-screen items-center justify-center">
       <div className="space-y-6 text-center">
         <h1
           className={cn(
-            "text-6xl font-semibold text-white drop-shadow-md",
+            "text-6xl font-semibold drop-shadow-md",
             font.className
           )}
         >
           🔐 Auth
         </h1>
 
-        <p className="text-white text-lg">
+        <p className=" text-lg">
           A simple authentication service built using{" "}
           <span className="font-semibold">Next.js</span> &{" "}
           <span className="font-semibold">NextAuth</span>.
@@ -29,7 +29,7 @@ export default function Home() {
 
         <div>
           <LoginButton>
-            <Button variant="secondary" size="lg">
+            <Button variant="default" size="lg">
               Sign in
             </Button>
           </LoginButton>
