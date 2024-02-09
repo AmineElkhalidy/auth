@@ -24,7 +24,7 @@ export default function Home() {
         <p className=" text-lg">
           A simple authentication service built using{" "}
           <span className="font-semibold">Next.js</span> &{" "}
-          <span className="font-semibold">NextAuth</span>.
+          <span className="font-semibold">Auth.js</span>.
         </p>
 
         <div>
