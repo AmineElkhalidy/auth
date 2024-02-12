@@ -13,7 +13,7 @@ import LogoutButton from "./LogoutButton";
 
 const UserButton = () => {
   const user = useCurrentUser();
-  console.log(user?.role);
+
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
