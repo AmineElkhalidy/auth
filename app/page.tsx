@@ -28,7 +28,7 @@ export default function Home() {
         </p>
 
         <div>
-          <LoginButton>
+          <LoginButton mode="modal" asChild>
             <Button variant="default" size="lg">
               Sign in
             </Button>
