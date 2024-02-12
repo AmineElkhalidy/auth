@@ -19,7 +19,7 @@ const AdminPage = () => {
   const onServerActionClick = () => {
     admin().then((data) => {
       if (data?.error) toast.error(data?.error);
-      if (data?.success) toast.error(data?.success);
+      if (data?.success) toast.success(data?.success);
     });
   };
   return (
