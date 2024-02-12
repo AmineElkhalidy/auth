@@ -40,6 +40,7 @@ export const {
 
       return true;
     },
+
     async session({ token, session }) {
       if (token.sub && session.user) {
         session.user.id = token.sub;
@@ -47,6 +48,10 @@ export const {
 
       if (token.role && session.user) {
         session.user.role = token.role;
+      }
+
+      if (session.user) {
+        session.user.isTwoFactorEnabled = token.isTwoFactorEnabled as boolean;
       }
 
       return session;
@@ -57,14 +62,17 @@ export const {
       const existingUser = await getUserById(token.sub);
 
       if (!existingUser) return token;
-      token.rule = existingUser.role;
+      token.role = existingUser.role;
+      token.isTwoFactorEnabled = existingUser.isTwoFactorEnabled;
       return token;
     },
   },
+
   pages: {
     signIn: "/auth/login",
     error: "/auth/error",
   },
+
   events: {
     async linkAccount({ user }) {
       await db.user.update({
@@ -77,6 +85,7 @@ export const {
       });
     },
   },
+
   adapter: PrismaAdapter(db),
   session: { strategy: "jwt" },
   ...authConfig,

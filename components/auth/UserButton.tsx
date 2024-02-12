@@ -28,12 +28,12 @@ const UserButton = () => {
       <DropdownMenuContent className="p-4">
         <div className="flex flex-col border-b pb-2 text-sm mb-4">
           <p className="font-medium">{user?.email}</p>
-          <p className="text-muted-foreground">
-            {user?.role ? "Admin" : "User"}
-          </p>
+          <p className="text-muted-foreground lowercase">{user?.role}</p>
         </div>
         <LogoutButton>
-          <DropdownMenuItem>Logout</DropdownMenuItem>
+          <DropdownMenuItem className="hover:bg-transparent">
+            Logout
+          </DropdownMenuItem>
         </LogoutButton>
       </DropdownMenuContent>
     </DropdownMenu>
