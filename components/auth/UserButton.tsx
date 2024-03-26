@@ -10,6 +10,7 @@ import React from "react";
 import { Avatar, AvatarImage, AvatarFallback } from "../ui/avatar";
 import { FaRegCircleUser } from "react-icons/fa6";
 import LogoutButton from "./LogoutButton";
+import { CiLogout } from "react-icons/ci";
 
 const UserButton = () => {
   const user = useCurrentUser();
@@ -25,13 +26,17 @@ const UserButton = () => {
         </Avatar>
       </DropdownMenuTrigger>
 
-      <DropdownMenuContent className="p-4">
-        <div className="flex flex-col border-b pb-2 text-sm mb-4">
-          <p className="font-medium">{user?.email}</p>
-          <p className="text-muted-foreground lowercase">{user?.role}</p>
+      <DropdownMenuContent className="py-2">
+        <div className="flex flex-col border-b pb-2 text-sm mb-3 gap-y-1 px-2">
+          <p className="text-sm font-semibold leading-none">{user?.name}</p>
+          <p className="text-xs font-semibold text-muted-foreground">
+            {user?.email}
+          </p>
         </div>
+
         <LogoutButton>
-          <DropdownMenuItem className="hover:bg-transparent">
+          <DropdownMenuItem className="hover:bg-transparent space-x-2">
+            <CiLogout className="w-5 h-5 rotate-180 inline-block mr-2" />
             Logout
           </DropdownMenuItem>
         </LogoutButton>

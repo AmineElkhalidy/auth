@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { logout } from "@/actions/logout";
-import { Button } from "../ui/button";
 
 interface LogoutButtonProps {
   children?: React.ReactNode;
@@ -12,9 +11,9 @@ const LogoutButton = ({ children }: LogoutButtonProps) => {
     logout();
   };
   return (
-    <Button className="cursor-pointer w-full" onClick={onClickHandler}>
+    <span className="cursor-pointer" onClick={onClickHandler}>
       {children}
-    </Button>
+    </span>
   );
 };
 
